@@ -8,6 +8,12 @@ import { RepairModule } from './repair/repair.module';
 import { ParkModule } from './park/park.module';
 import { join } from 'path';
 import { ResidentModule } from './resident/resident.module';
+import { Building } from './building/building.entity';
+import { House } from './house/house.entity';
+import { Park } from './park/park.entity';
+import { UsePark } from './park/usepark.entity';
+import { Repair } from './repair/repair.entity';
+import { Resident } from './resident/resident.entity';
 
 @Module({
   imports: [
@@ -18,7 +24,15 @@ import { ResidentModule } from './resident/resident.module';
       username: 'root',
       password: 'root',
       database: 'xyc',
-      entities: [],
+      entities: [
+        Building,
+        CommunityModule,
+        House,
+        Park,
+        UsePark,
+        Repair,
+        Resident,
+      ],
       synchronize: true,
     }),
     GraphQLModule.forRoot({
